@@ -42,5 +42,13 @@ document.addEventListener('DOMContentLoaded', () => {
           mobileNavLinks.classList.remove("open");
         }
       });
-    
+     // const mobileLinks = document.querySelector('.mobile-nav-links');
+      const anchor = mobileNavLinks.querySelectorAll('a'); // Assuming your links are <a> tags inside mobileNavLinks
+
+      anchor.forEach(link => {
+        link.addEventListener('click', () => {
+          mobileNavLinks.classList.remove('open');
+        });
+      });
+      
 });

@@ -222,7 +222,7 @@ section:in-view {
     background-color: transparent; /* Specific rule to detect in-view */
   }
   section:last-child {
-    margin-bottom: 50px;
+    margin-bottom: 40px;
   }
   
 
@@ -284,36 +284,21 @@ section:in-view {
   
 
 }
-.vision-section .container{
-    padding-top: 40px;
-}
-
 
 
 .leadership-section {
   background: url("media/leadership.jpeg") no-repeat center center/cover;
   color: #fff;
 }
-.leadership-section .container{
-    padding-top: 40px;
-}
-
 
 .inovation-section {
   background: url("media/inovation.jpeg") no-repeat center center/cover;
   color: #fff;
 }
-.inovation-section .container{
-    padding-top: 40px;
-}
-
 
 .network-section {
   background: url("media/networks.jpeg") no-repeat center center/cover;
   color: #fff;
-}
-.network-section .container{
-    padding-top: 40px;
 }
 
 
@@ -323,9 +308,7 @@ section:in-view {
   background-size: cover; 
 }
 
-.ecosystem-section  .container{
-    padding-top: 40px;
-}
+
 .ecosystem-section .split-section{
     display: grid;
     grid-template-columns: 50% 50%;
@@ -383,26 +366,16 @@ section:in-view {
     background: url("media/success.jpeg") no-repeat center center/cover;
     background-size: cover; 
   }
-.success-section .container{
-    padding-top: 40px;
-}
 
 
 
 .commitment-section {
   background: url("media/comitment.jpeg") no-repeat center center/cover;
 }
-.commitment-section .container{
-    padding-top: 40px;
-}
-
 
 .relations-section {
   background: url("media/relations.jpeg") no-repeat center center/cover;
   background-size: cover; 
-}
-.relations-section .container{
-    padding-top: 40px;
 }
 
 
@@ -411,9 +384,7 @@ section:in-view {
   background-size: cover; 
  
 }
-.partner-section .container{
-    padding-top: 40px;
-}
+
 .partner-section .grid-section{
     display: grid;
     grid-template-columns: repeat(3, 1fr); 
@@ -441,18 +412,22 @@ section:in-view {
   @media (max-width: 767px) {
   
     .partner-section .grid-section {
-      grid-template-columns: 100%; 
-      gap: 1.5rem; 
+      grid-template-columns: 50% 50%; 
       margin-top: 20px; 
+      padding: 0;
     }
-    .partner-section .grid-item {
-      font-size: 0.875rem;
-      padding: 0.8rem; 
+    .partner-section .grid-item  {
+     
+      padding: 0.5rem; 
+    }
+    .partner-section .grid-item p {
+      font-size: 0.8rem;
+    
     }
   
     .partner-section .grid-item h4 {
-      font-size: 1.125rem; 
-      color: #0bfcfd;
+      font-size: 0.9rem; 
+      
     }
   
   
