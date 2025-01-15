@@ -1,0 +1,5 @@
+{
+    "liveServer.settings.port": 5501,
+    "appService.defaultWebAppToDeploy": "/subscriptions/15c7f402-ef75-4d4c-9324-d853edb09538/resourceGroups/presentation/providers/Microsoft.Web/sites/mglobal",
+    "appService.deploySubpath": "."
+}

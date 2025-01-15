@@ -1,0 +1,515 @@
+/* General Styles */
+html {
+    font-size: 16px;  /* 1rem = 16px */
+    font-family: 'Montserrat', sans-serif;
+  }
+body {
+  
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  color: #333;
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+  background-color: #cacaca;
+  overflow-x: hidden;
+}
+
+main {
+    width: 100%; /* Ensure main takes up full width */
+  display: block; /* Make sure it's treated as a block-level element */
+  flex: 1;
+  
+}
+/* Headers and paragraph styles */
+h1 {
+    font-size: 2.625rem; /* 42px */
+    margin-bottom: 1.5rem;
+  }
+  
+  h2 {
+    font-size: 2rem; /* 32px */
+    margin-bottom: 1.25rem;
+  }
+  
+  h3 {
+    font-size: 1.25rem; /* 20px */
+    margin-bottom: 1rem;
+    color:#a4a4a4;
+    font-weight: normal;
+  }
+  
+  h4 {
+    font-size: 1rem; /* 16px */
+    margin-bottom: 0.75rem;
+  }
+  
+  p {
+    font-size: 1.25rem; /* 18px */
+    margin-bottom: 1rem;
+    padding: 5px;
+  }
+  .strong{
+    font-size: 1.5rem; 
+    color: #0bfcfd;
+    font-weight: 700;
+  }
+.container {
+  width: 100%;
+  margin: 0 auto;
+  max-width: 1200px;
+  padding: 0 1rem;
+}
+
+/* Navbar */
+.navbar {
+  color: #fff;
+  padding: 1rem 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(34, 78, 128, 0.3);
+  background-color: rgba(36,82,131, 0.9);
+  transition: background-color 0.3s ease;
+}
+
+
+
+.scrolled .navbar {
+  background-color: #333; 
+}
+
+.navbar .logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #fff;
+  text-decoration: none;
+}
+
+.logo-img {
+  width: 140px;
+  height: auto;
+  margin-right: 20px;
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 20px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 1100;
+  position: relative;
+}
+
+.hamburger .bar {
+  height: 3px;
+  width: 100%;
+  background-color: #fff;
+  border-radius: 2px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.nav-links {
+  display: flex;
+  gap: 0.7rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.nav-links li a {
+  color: #fff;
+
+  text-decoration: none;
+  font-weight: bold;
+  text-decoration: none;
+}
+.nav-links.mobile {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  top: 100%; /* Right below the hamburger */
+  left: 0;
+  background-color: rgba(0, 64, 128, 0.95);
+  border-radius: 8px;
+  padding: 0.5rem 0.7rem;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  text-align: center;
+  
+}
+
+.nav-links.mobile.open {
+  display: flex;
+}
+@media (max-width: 1024px) {
+    .hamburger {
+      display: flex;
+    }
+  
+    .nav-links {
+      display: none;
+    }
+  
+    .nav-links.mobile {
+      display: none; 
+    }
+  
+    .nav-links.mobile.open {
+      display: flex;
+      flex-direction: column;
+      text-align: start;
+    }
+
+    /*hero section*/
+   section h1 {
+        font-size: 2rem; 
+    }
+    section p {
+        font-size: 1rem; 
+    }
+
+
+  }
+
+  
+section {
+   
+  height: 100vh;
+  display: flex;
+ 
+  color: #fff;
+  padding: 20px;
+ 
+}
+section h2 {
+    font-size: 2rem;
+    display: inline-block;
+    position: relative;
+    text-align: left;
+    color: #fff;
+    margin: 0;
+    animation: fadeIn 1.5s ease-in-out;
+}
+section h2::after {
+    content: ""; /* Empty content */
+    display: block; /* Makes the pseudo-element behave like a block element */
+    width: 100%; /* Matches the width of the text */
+    height: 1px; /* Thickness of the underline */
+    background-color: #01b301; /* Green underline */
+    position: absolute; /* Positions the underline relative to the header */
+    bottom: -5px; /* Distance from the text */
+    left: 0; /* Aligns underline with the start of the text */
+    padding-right: 30px;
+}
+@media (max-width: 767px) {
+    section h2 {
+        font-size: 1.5rem; /* Reduce font size for mobile */
+        text-align: left; /* Center the text on mobile */
+    }
+
+    section h2::after {
+        width: 80%; /* Slightly smaller underline on mobile */
+        bottom: -3px; /* Adjust the distance of the underline */
+    }
+}
+section:in-view {
+    background-color: transparent; /* Specific rule to detect in-view */
+  }
+  section:last-child {
+    margin-bottom: 50px;
+  }
+  
+
+.split-section {
+    display: grid;
+    grid-template-columns: 60% 40%; 
+    gap: 2rem;
+  
+  }
+/* Hero Section */
+.hero-section {
+    background: url("media/bg.jpeg") no-repeat center center;
+    background-size: cover; /* Ensure the background image covers the section */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Make sure the section takes full height */
+    text-align: center; /* Center the text */
+ 
+}
+.hero-section .hero-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  
+.hero-section .logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.hero-section .logo-container img {
+    height: auto;
+    width: 100%; /* Make image responsive */
+    max-width: 200px; /* Set a max width for logo */
+    display: block;
+}
+
+
+
+/* Section Styles */
+
+
+.mision-section {
+  background: url("media/mission.jpeg") no-repeat center center/cover;
+  color: #fff;
+  align-items: flex-start; 
+  
+}
+
+/* Services Section */
+.vision-section {
+  background: url("media/vision.jpeg") no-repeat center center/cover;
+  color: #fff;
+  
+
+}
+.vision-section .container{
+    padding-top: 40px;
+}
+
+
+
+.leadership-section {
+  background: url("media/leadership.jpeg") no-repeat center center/cover;
+  color: #fff;
+}
+.leadership-section .container{
+    padding-top: 40px;
+}
+
+
+.inovation-section {
+  background: url("media/inovation.jpeg") no-repeat center center/cover;
+  color: #fff;
+}
+.inovation-section .container{
+    padding-top: 40px;
+}
+
+
+.network-section {
+  background: url("media/networks.jpeg") no-repeat center center/cover;
+  color: #fff;
+}
+.network-section .container{
+    padding-top: 40px;
+}
+
+
+
+.ecosystem-section {
+  background: url("media/ecosystem.jpeg") no-repeat center center/cover;
+  background-size: cover; 
+}
+
+.ecosystem-section  .container{
+    padding-top: 40px;
+}
+.ecosystem-section .split-section{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    height: 100vh; /* Ensures full viewport height */
+    gap: 1rem;
+}
+
+  
+.ecosystem-section  .header {
+  width: 25%;
+  }
+  
+    
+
+  
+.ecosystem-section .split-section .left-column  , 
+.ecosystem-section .split-section .right-column{
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Align items at the bottom of the column */
+   
+    width: 85%;
+}
+/*ecosystem mobile*/
+@media (max-width: 767px) {
+    /* Reduce the height for mobile to avoid excessive white space */
+    .ecosystem-section .split-section {
+      grid-template-columns: 100%; /* Stack columns on top of each other */
+      height: auto; /* Adjust height to auto for better fitting on smaller screens */
+      gap: 1.5rem; /* Add more space between stacked sections */
+    }
+  
+    /* Adjust header and container padding for mobile */
+    .ecosystem-section .header {
+      width: 100%; /* Make header take full width on mobile */
+      text-align: center; /* Center-align the header text */
+    }
+  
+    /* Adjust font sizes for mobile */
+    .ecosystem-section .split-section .left-column p,
+    .ecosystem-section .split-section .right-column p {
+      font-size: 1.125rem; /* 16px on mobile */
+      text-align: center; /* Center-align text on mobile */
+      padding: 0 1rem; /* Add padding to avoid text touching the edges */
+      font-weight: 700;
+    }
+  
+    /* Adjust container padding for mobile */
+    .ecosystem-section .container {
+      padding: 2rem 1rem; /* Reduce padding on mobile for better spacing */
+    }
+  }
+
+  .success-section {
+    background: url("media/success.jpeg") no-repeat center center/cover;
+    background-size: cover; 
+  }
+.success-section .container{
+    padding-top: 40px;
+}
+
+
+
+.commitment-section {
+  background: url("media/comitment.jpeg") no-repeat center center/cover;
+}
+.commitment-section .container{
+    padding-top: 40px;
+}
+
+
+.relations-section {
+  background: url("media/relations.jpeg") no-repeat center center/cover;
+  background-size: cover; 
+}
+.relations-section .container{
+    padding-top: 40px;
+}
+
+
+.partner-section {
+  background: url("media/partner.jpeg") no-repeat center center/cover;
+  background-size: cover; 
+ 
+}
+.partner-section .container{
+    padding-top: 40px;
+}
+.partner-section .grid-section{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    grid-template-rows: auto; 
+    gap: 1rem; 
+    padding: 1rem;
+ 
+    margin-top: 40px;
+}
+.grid-section .grid-item {
+    background-color:#a4a4a4; 
+    color: white; 
+    padding: 1rem;
+    text-align: center;
+    border-radius: 8px; 
+    font-family: 'Montserrat', sans-serif; 
+    font-size: 1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: rgba(164,164,164, 0.7);
+  transition: background-color 0.3s ease;
+  }
+  .grid-section .grid-item h4{
+    color: #0bfcfd;
+  }
+  @media (max-width: 767px) {
+  
+    .partner-section .grid-section {
+      grid-template-columns: 100%; 
+      gap: 1.5rem; 
+      margin-top: 20px; 
+    }
+    .partner-section .grid-item {
+      font-size: 0.875rem;
+      padding: 0.8rem; 
+    }
+  
+    .partner-section .grid-item h4 {
+      font-size: 1.125rem; 
+      color: #0bfcfd;
+    }
+  
+  
+    .partner-section .container {
+      padding: 2rem 1rem;
+    }
+  
+  
+    .partner-section {
+      background-size: 100% 100%; 
+    }
+  }
+/* Footer */
+footer {
+    background: #004080;
+    color: #fff;
+    text-align: center;
+    animation: fadeIn 2s ease-in-out;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    height: 50px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  footer .container {
+    padding: 0 1rem; 
+  }
+  
+  footer p {
+    font-size: 1rem;
+    margin: 0;
+  }
+
+  @media (max-width: 767px) {
+    footer {
+      height: 40px;
+    }
+  
+    footer .container {
+      padding: 0 0.5rem; 
+    }
+  
+    footer p {
+      font-size: 0.875rem; 
+    }
+  }
+/* Keyframes for Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
