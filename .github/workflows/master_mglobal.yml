@@ -3,7 +3,7 @@ name: Deploy Static App to Azure
 on:
   push:
     branches:
-      - main  # Replace 'main' with your branch name if different
+      - master  # Replace 'main' with your branch name if different
   pull_request:
     branches:
       - '*'
