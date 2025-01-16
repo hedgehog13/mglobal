@@ -6,13 +6,13 @@ on:
     branches:
       - master
   workflow_dispatch:
-permissions:
-  id-token: write
-  contents: read
+
 jobs:
   deploy:
     runs-on: windows-latest
-
+    permissions:
+      id-token: write
+      contents: read
     steps:
       # Check out the code from your repository
       - uses: actions/checkout@v4
@@ -21,9 +21,9 @@ jobs:
       - name: Login to Azure
         uses: azure/login@v2
         with:
-          client-id: ${{ secrets.AZURE_CLIENT_ID }}
-          tenant-id: ${{ secrets.AZURE_TENANT_ID }}
-          subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_09C8E39A05834AE2B2E3B901168C5016 }}
+          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_99C0C545B5904EC19E081383981EE904 }}
+          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_8FFF97ECF8F74BF085C997E0C0E54337 }}
 
       # Deploy to Azure Web App
       - name: Deploy to Azure Web App
