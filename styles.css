@@ -391,10 +391,11 @@ section:in-view {
     grid-template-rows: auto; 
     gap: 1rem; 
     padding: 1rem;
- 
+    line-height: 1;
     margin-top: 40px;
 }
 .grid-section .grid-item {
+ 
     background-color:#a4a4a4; 
     color: white; 
     padding: 1rem;
