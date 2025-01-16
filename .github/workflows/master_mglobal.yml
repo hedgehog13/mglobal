@@ -10,9 +10,7 @@ on:
 jobs:
   deploy:
     runs-on: windows-latest
-    permissions:
-      id-token: write
-      contents: read
+   
     steps:
       # Check out the code from your repository
       - uses: actions/checkout@v4
