@@ -15,10 +15,13 @@ jobs:
     
     permissions:
       id-token: write #This is required for requesting the JWT
+      contents: read
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+      - name: Check Azure CLI Installation
+        run: az --version 
         
       - name: Login to Azure
         uses: azure/login@v2
