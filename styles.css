@@ -11,15 +11,15 @@ body {
   color: #333;
   scroll-behavior: smooth;
   box-sizing: border-box;
-  background-color: #cacaca;
+  background-color: #e8f1fd ;
   overflow-x: hidden;
+  position: relative;
 }
 
 main {
-    width: 100%; /* Ensure main takes up full width */
-  display: block; /* Make sure it's treated as a block-level element */
-  flex: 1;
-  
+  padding: 2% 15%;
+ 
+
 }
 /* Headers and paragraph styles */
 h1 {
@@ -62,16 +62,15 @@ h1 {
 }
 
 /* Navbar */
-.navbar {
-  color: #fff;
-  padding: 1rem 0;
+header{
+  height: 100px;
   position: fixed;
-  top: 0;
+  top: 0px;
   width: 100%;
-  z-index: 1000;
+  padding: 12px 80px;
   box-shadow: 0 2px 5px rgba(34, 78, 128, 0.3);
   background-color: rgba(36,82,131, 0.9);
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease; 
 }
 
 
@@ -139,7 +138,7 @@ h1 {
   border-radius: 8px;
   padding: 0.5rem 0.7rem;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-  z-index: 1000;
+  z-index: 9999; /* Increased z-index for visibility */
   text-align: center;
   
 }
@@ -180,16 +179,19 @@ h1 {
   
 section {
    
-  height: 100vh;
+  /* height: 100vh; */
   display: flex;
  
   color: #fff;
-  padding: 20px;
+  padding: 40px;
+  margin-bottom: 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
  
 }
 section h2 {
     font-size: 2rem;
-    display: inline-block;
+    display: contents;
     position: relative;
     text-align: left;
     color: #fff;
@@ -201,8 +203,8 @@ section h2::after {
     display: block; /* Makes the pseudo-element behave like a block element */
     width: 100%; /* Matches the width of the text */
     height: 1px; /* Thickness of the underline */
-    background-color: #01b301; /* Green underline */
-    position: absolute; /* Positions the underline relative to the header */
+    background-color: #39e2f5; /* Green underline */
+    position: static; /* Positions the underline relative to the header */
     bottom: -5px; /* Distance from the text */
     left: 0; /* Aligns underline with the start of the text */
     padding-right: 30px;
@@ -216,6 +218,7 @@ section h2::after {
     section h2::after {
         width: 80%; /* Slightly smaller underline on mobile */
         bottom: -3px; /* Adjust the distance of the underline */
+    
     }
 }
 section:in-view {
@@ -235,11 +238,12 @@ section:in-view {
 /* Hero Section */
 .hero-section {
     background: url("media/bg.jpeg") no-repeat center center;
+    /* background: linear-gradient(to right, #365e8b, #6d9acb, #b0cdee); */
     background-size: cover; /* Ensure the background image covers the section */
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh; /* Make sure the section takes full height */
+   /*  height: 100vh; Make sure the section takes full height */
     text-align: center; /* Center the text */
  
 }
@@ -271,7 +275,8 @@ section:in-view {
 
 
 .mision-section {
-  background: url("media/mission.jpeg") no-repeat center center/cover;
+  /* background: url("media/mission.jpeg") no-repeat center center/cover; */
+  background: linear-gradient(to left, #365e8b, #6d9acb, #b0cdee);
   color: #fff;
   align-items: flex-start; 
   
@@ -279,7 +284,8 @@ section:in-view {
 
 /* Services Section */
 .vision-section {
-  background: url("media/vision.jpeg") no-repeat center center/cover;
+  /* background: url("media/vision.jpeg") no-repeat center center/cover; */
+  background: linear-gradient(to right, #365e8b, #6d9acb, #b0cdee);
   color: #fff;
   
 
@@ -287,25 +293,30 @@ section:in-view {
 
 
 .leadership-section {
-  background: url("media/leadership.jpeg") no-repeat center center/cover;
+  /* background: url("media/leadership.jpeg") no-repeat center center/cover; */
+  background: linear-gradient(to left, #365e8b, #6d9acb, #b0cdee);
   color: #fff;
 }
 
 .inovation-section {
-  background: url("media/inovation.jpeg") no-repeat center center/cover;
+  /* background: url("media/inovation.jpeg") no-repeat center center/cover; */
+  background: linear-gradient(to right, #365e8b, #6d9acb, #b0cdee);
   color: #fff;
 }
 
 .network-section {
-  background: url("media/networks.jpeg") no-repeat center center/cover;
+  /* background: url("media/networks.jpeg") no-repeat center center/cover; */
+  background: linear-gradient(to left, #365e8b, #6d9acb, #b0cdee);
   color: #fff;
 }
 
 
 
 .ecosystem-section {
-  background: url("media/ecosystem.jpeg") no-repeat center center/cover;
-  background-size: cover; 
+  background: 
+    url("media/image13-nbg.png") no-repeat center center / contain, 
+    linear-gradient(to right, #365e8b, #6d9acb, #b0cdee);
+  background-size: contain, cover;
 }
 
 
@@ -316,12 +327,6 @@ section:in-view {
     gap: 1rem;
 }
 
-  
-.ecosystem-section  .header {
-  width: 25%;
-  }
-  
-    
 
   
 .ecosystem-section .split-section .left-column  , 
@@ -334,8 +339,14 @@ section:in-view {
 }
 /*ecosystem mobile*/
 @media (max-width: 767px) {
+
+  .ecosystem-section {
+    background: linear-gradient(to left, #365e8b, #6d9acb, #b0cdee);
+  }
+  
     /* Reduce the height for mobile to avoid excessive white space */
     .ecosystem-section .split-section {
+   
       grid-template-columns: 100%; /* Stack columns on top of each other */
       height: auto; /* Adjust height to auto for better fitting on smaller screens */
       gap: 1.5rem; /* Add more space between stacked sections */
@@ -363,24 +374,28 @@ section:in-view {
   }
 
   .success-section {
-    background: url("media/success.jpeg") no-repeat center center/cover;
+    /* background: url("media/success.jpeg") no-repeat center center/cover; */
+    background: linear-gradient(to left, #365e8b, #6d9acb, #b0cdee);
     background-size: cover; 
   }
 
 
 
 .commitment-section {
-  background: url("media/comitment.jpeg") no-repeat center center/cover;
+  /* background: url("media/comitment.jpeg") no-repeat center center/cover; */
+  background: linear-gradient(to right, #365e8b, #6d9acb, #b0cdee);
 }
 
 .relations-section {
-  background: url("media/relations.jpeg") no-repeat center center/cover;
+  /* background: url("media/relations.jpeg") no-repeat center center/cover; */
+  background: linear-gradient(to left, #365e8b, #6d9acb, #b0cdee);
   background-size: cover; 
 }
 
 
 .partner-section {
-  background: url("media/partner.jpeg") no-repeat center center/cover;
+  /* background: url("media/partner.jpeg") no-repeat center center/cover; */
+  background: linear-gradient(to right, #365e8b, #6d9acb, #b0cdee);
   background-size: cover; 
  
 }
@@ -404,11 +419,13 @@ section:in-view {
     font-family: 'Montserrat', sans-serif; 
     font-size: 1rem;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    background-color: rgba(164,164,164, 0.7);
+    background-color: rgba(220, 220, 220, 0.3);
   transition: background-color 0.3s ease;
   }
   .grid-section .grid-item h4{
     color: #0bfcfd;
+    /* text-transform: capitalize;
+    font-weight: bold; */
   }
   @media (max-width: 767px) {
   
@@ -468,6 +485,22 @@ footer {
   }
 
   @media (max-width: 767px) {
+   
+      main{
+        width: 100%;
+        padding: 17% 0%;
+       
+      }
+      header {
+        height: 100px;
+        position: fixed;
+        top: 0px;
+        width: 100%;
+        padding: 7px 0px;
+        box-shadow: 0 2px 5px rgba(34, 78, 128, 0.3);
+        background-color: rgba(36, 82, 131, 0.9);
+        transition: background-color 0.3s ease;
+    }
     footer {
       height: 40px;
     }
