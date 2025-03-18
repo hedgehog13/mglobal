@@ -206,9 +206,7 @@ section {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
   transition: transform 0.3s ease-in-out; 
 }
-section:hover{
-  transform: scale(1.05);
-}
+
 
 section h2 {
     font-size: 2rem;
