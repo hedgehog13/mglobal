@@ -50,5 +50,30 @@ document.addEventListener('DOMContentLoaded', () => {
           mobileNavLinks.classList.remove('open');
         });
       });
+
+      window.addEventListener("click", function (e) {
+        if (e.target.classList.contains("modal")) {
+          e.target.style.display = "none";
+        }
+      });
+      // Add event listeners to open modals
+document.getElementById("privacyLink").addEventListener("click", function (e) {
+  e.preventDefault();
+  openModal("privacyModal");
+});
+
+document.getElementById("termsLink").addEventListener("click", function (e) {
+  e.preventDefault();
+  openModal("termsModal");
+});
+
       
 });
+function openModal(modalId) {
+  document.getElementById(modalId).style.display = "flex";
+}
+
+// Function to close modal
+function closeModal(modalId) {
+  document.getElementById(modalId).style.display = "none";
+}
