@@ -67,6 +67,24 @@ document.getElementById("termsLink").addEventListener("click", function (e) {
   openModal("termsModal");
 });
 
+
+const popup = document.getElementById("privacy-popup");
+const closeBtn = document.getElementById("close-popup");
+
+ // Check if the user has already seen the popup
+ if (!localStorage.getItem("privacyAccepted")) {
+  setTimeout(() => {
+      popup.style.display = "block"; // Show popup after 2 seconds
+  }, 2000);
+}
+
+
+// Close the popup and store the visit in localStorage
+closeBtn.addEventListener("click", function () {
+    popup.style.display = "none";
+    localStorage.setItem("privacyAccepted", new Date().toISOString()); // Save visit date
+});
+
       
 });
 function openModal(modalId) {
