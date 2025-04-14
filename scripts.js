@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     // Smooth scroll with fixed header adjustment
-    const headerOffset = document.querySelector('.navbar').offsetHeight;
+    const headerOffset = document.querySelector('.navbar').offsetHeight +40;
 
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
@@ -42,8 +42,8 @@ document.addEventListener('DOMContentLoaded', () => {
           mobileNavLinks.classList.remove("open");
         }
       });
-     // const mobileLinks = document.querySelector('.mobile-nav-links');
-      const anchor = mobileNavLinks.querySelectorAll('a'); // Assuming your links are <a> tags inside mobileNavLinks
+    
+      const anchor = mobileNavLinks.querySelectorAll('a'); 
 
       anchor.forEach(link => {
         link.addEventListener('click', () => {
