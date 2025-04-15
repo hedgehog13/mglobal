@@ -180,7 +180,7 @@ header{
       display: flex;
       flex-direction: column;
       text-align: start;
-      margin-left: 15px;
+      padding-left: 15px;
     }
    
     /*hero section*/
